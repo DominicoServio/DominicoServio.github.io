@@ -10,7 +10,29 @@
       "value":5
     },
     "line_linked":{
-      "color":"CCC"
+      "distance":150,
+      "color":"CCC",
+      "width":1
+    }
+  },
+  "interactivity":{
+    "events":{
+      "onhover":{
+        "enable":true,
+        "mode":"grab"
+      },
+      "onclick":{
+        "enable":true,
+        "mode":"repulse"
+      }
+    },
+    "modes": {
+      "grab": {
+        "distance": 200,
+        "line_linked": {
+          "opacity": 1
+        }
+      }
     }
   }
 }
