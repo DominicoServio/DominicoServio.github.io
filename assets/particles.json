@@ -4,14 +4,14 @@
       "value":50
     },
     "color":{
-      "value":"29C5F2"
+      "value":"E0E0E0"
     },
     "size":{
       "value":5
     },
     "line_linked":{
       "distance":150,
-      "color":"29C5F2",
+      "color":"CCC",
       "width":1
     }
   },
