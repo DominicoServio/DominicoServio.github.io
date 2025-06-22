@@ -1,0 +1,16 @@
+{
+  "particles":{
+    "number":{
+      "value":50
+    },
+    "color":{
+      "value":"E0E0E0"
+    },
+    "size":{
+      "value":5
+    },
+    "line_linked":{
+      "color":"CCC"
+    }
+  }
+}

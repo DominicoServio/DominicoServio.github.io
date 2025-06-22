@@ -7,35 +7,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Dominico Servio - Portfolio</title>
-    <link rel="icon" type="image/png" href="DS-icon.png">
+    <link rel="icon" type="image/png" href="assets/DS-icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <nav class="navbar">
-            <img src="DS-white.png" alt="Logo">
-            
+            <a href=#home><img src="assets/DS-white.png" alt="Logo"></a>
             <ul>
-                <li><a href="header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
-        <header>
-            <img src="DS-black.png" alt="Logo">
+        <header id="home">
+            <div id="particles-js"></div>
+            <img src="assets/DS-black.png" alt="Logo">
             <h2>Dominico Servio Sofian</h2>
             <hr>
             <p>Hi there! I’m a <b>Computer Science graduate</b> with a strong focus on <b>data analysis</b> and <b>data communication</b>. My primary tool is Python, but I’m also proficient in SQL, Tableau, and Power BI. Additionally, I have an interest for graphic design, which enables me to communicate data more effectively and create impactful visual representations.
             </p>
+            <div class="button-container">
+                <a href=#portfolio><div id="div-button">Portfolio</div></a>
+                <a href="#contact"><div id="div-button">Contact</div></a>
+            </div>
         </header>
         <main>
-        <section id="about">
+        <section class="about" id="about">
             <h1>About Me</h1>
             <hr>
             <div class="section-body">
-            <img src="foto.png" alt="A photo of me">
+            <img src="assets/foto.png" alt="A photo of me">
             <p><mark class="p1">Hi, <mark class="bold">I’m Dom!</mark> I'm a data analyst specializing in <mark class="bold">data visualization and communication</mark>. If you're looking for someone who can turn complex data into clear, actionable insights—whether through an intuitive dashboard, an engaging presentation, or compelling visuals—I’m the expert you need.
             </mark><br>
             <br><mark class="p2">I was ranked <mark class="bold">top 2 out of 120</mark> students in RevoU’s data analyst course—<mark class="bold">twice</mark>—by delivering clean, well-structured decks and impactful visualizations that made complex data easy to understand.
@@ -44,60 +48,60 @@
             </mark></p>
             </div>
         </section>
-        <section id="skills">
+        <section class="skills" id="skills">
             <h1>Skills</h1>
             <hr>
-            <div id="skill-category">
+            <div class="skill-category">
                 <div id="skill1">
                     <h2>Analythics</h2>
                     <p>My critical thinking help me to analyze data and bring data-driven insight and recommendation</p>
                     <div class="tools">
-                        <img src="icon-excel.png" title="Spreadsheet">
-                        <img src="icon-sql.png" title="SQL">
-                        <img src="icon-pd.png" title="Python - Pandas">
+                        <img src="assets/icon-excel.png" title="Spreadsheet">
+                        <img src="assets/icon-sql.png" title="SQL">
+                        <img src="assets/icon-pd.png" title="Python - Pandas">
                     </div>
                 </div>
                 <div id="skill2">
                     <h2>Design & Visualization</h2>
                     <p>With my skills in design, I can deliver data to stakeholder more effective and engaging</p>
                     <div class="tools">
-                        <img src="icon-pbi.png" title="Power BI">
-                        <img src="icon-tableau.png" title="Tableau">
-                        <img src="icon-plt.png" title="Python - Matplotlib">
-                        <img src="icon-sns.png" title="Python - Seaborn">
+                        <img src="assets/icon-pbi.png" title="Power BI">
+                        <img src="assets/icon-tableau.png" title="Tableau">
+                        <img src="assets/icon-plt.png" title="Python - Matplotlib">
+                        <img src="assets/icon-sns.png" title="Python - Seaborn">
                     </div>
                 </div>
                 <div id="skill3">
                     <h2>Programming</h2>
                     <p>Programming not just help me in analysis but also showcase my problem solving</p>
                     <div class="tools">
-                        <img src="icon-python.png" title="Python">
-                        <img src="icon-sql.png" title="SQL">
-                        <img src="icon-csharp.png" title="C#">
-                        <img src="icon-js.png" title="Javascript">
+                        <img src="assets/icon-python.png" title="Python">
+                        <img src="assets/icon-sql.png" title="SQL">
+                        <img src="assets/icon-csharp.png" title="C#">
+                        <img src="assets/icon-js.png" title="Javascript">
                     </div>
                 </div>
                 <div id="skill4">
                     <h2>Others</h2>
                     <p>I'm equiped with other tools that help me analyze and deliver data better</p>
                     <div class="tools">
-                        <img src="icon-ppt.png" title="Powerpoint">
-                        <img src="icon-word.png" title="Word">
-                        <img src="icon-jupiter.png" title="Jupiter Notebook">
-                        <img src="icon-sklearn.png" title="Python - Scikit Learn">
-                        <img src="icon-tf.png" title="Python - Tensor Flow">
+                        <img src="assets/icon-ppt.png" title="Powerpoint">
+                        <img src="assets/icon-word.png" title="Word">
+                        <img src="assets/icon-jupiter.png" title="Jupiter Notebook">
+                        <img src="assets/icon-sklearn.png" title="Python - Scikit Learn">
+                        <img src="assets/icon-tf.png" title="Python - Tensor Flow">
                     </div>
                 </div>        
             </div>
         </section>
-        <section id="portfolio">
+        <section class="portfolio" id="portfolio">
             <h1>Portfolio</h1>
             <hr>
             
         <a href="https://drive.google.com/file/d/1T4cBOf4LQJ07qB-rsMBjVpSX9hGX2FzC/view?usp=drive_link" target="_blank" class="portfolio-link">
             <div id="porto1" class="portfolio-item">
                 <h3>Customer Churn Analysis of Sigma.Net</h3>
-                <img src="dashboard - sigmanet.png">
+                <img src="assets/dashboard - sigmanet.png">
                 <span class="hover-text">Click to Deck</span>
             </div>
         </a>
@@ -105,13 +109,29 @@
         <a href="https://drive.google.com/file/d/12d0w-hHh0GZSMTpsfa-yH2ONpebgGHz9/view?usp=drive_link" target="_blank" class="portfolio-link">
             <div id="porto2" class="portfolio-item">
                 <h3>WishfulBazaar Sales Performance Analysis</h3>
-                <img src="dashboard - wishfullbazaar.png">
+                <img src="assets/dashboard - wishfullbazaar.png">
                 <span class="hover-text">Click to Deck</span>
             </div>
         </a>
 
         </section>
+        <section class="contact" id="contact">
+            <h1>Contact</h1>
+            <hr>
+            <p>Feel free to contact me for any question. You can connect with me on <a href="https://www.linkedin.com/in/DominicoServio/">LinkedIn</a>. You can also send me an email at <a href="mailto:dominico.servio@gmail.com">dominico.servio@gmail.com</a>.</p>
+            <div class="contact-container">
+                <a href="https://www.linkedin.com/in/DominicoServio/"><div id="contact-button">LINKED.IN</div></a>
+                <a href="https://github.com/DominicoServio/"><div id="contact-button">GITHUB</div></a>
+                <a href="mailto:dominico.servio@gmail.com"><div id="contact-button">EMAIL</div></a>
+            </div>
+        </section>
         </main>
     </div>
+    <script src="particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'assets/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+        });
+    </script>
 </body>
 </html>
