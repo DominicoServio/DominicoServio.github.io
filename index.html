@@ -16,7 +16,13 @@
             <a href=#home><img src="assets/DS-white.png" alt="Logo"></a>
             <ul>
                 <li><a href="#home">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
+                <li>
+                    <a href="#about">PROFILE</a>
+                    <ul class="profile-dropdown">
+                        <li><a href="#about">ABOUT ME</a></li>
+                        <li><a href="profile.html">EXPERIENCES</a></li>
+                    </ul>
+                </li>
                 <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#portfolio">PORTFOLIO</a></li>
                 <li><a href="#contact">CONTACT</a></li>
@@ -30,21 +36,23 @@
             <p>Hi there! I’m a <b>Computer Science graduate</b> with a strong focus on <b>data analysis</b> and <b>data communication</b>. My primary tool is Python, but I’m also proficient in SQL, Tableau, and Power BI. Additionally, I have an interest for graphic design, which enables me to communicate data more effectively and create impactful visual representations.
             </p>
             <div class="button-container">
-                <a href=#portfolio><div id="div-button">Portfolio</div></a>
-                <a href="#contact"><div id="div-button">Contact</div></a>
+                <a href=#about><div id="div-button">About Me</div></a>
+                <a href="profile.html"><div id="div-button">Experience</div></a>
             </div>
         </header>
         <main>
         <section class="about" id="about">
-            <h1>About Me</h1>
+            <!-- <h1>About Me</h1> -->
+            <hr>
+            <h3>I don't just analyze numbers, I craft stories that make data accessible and meaningful</h3>
             <hr>
             <div class="section-body">
-            <img src="assets/foto.png" alt="A photo of me">
+            <div class="photo-container"><img src="assets/foto.png" alt="A photo of me"></div>
             <p><mark class="p1">Hi, <mark class="bold">I’m Dom!</mark> I'm a data analyst specializing in <mark class="bold">data visualization and communication</mark>. If you're looking for someone who can turn complex data into clear, actionable insights—whether through an intuitive dashboard, an engaging presentation, or compelling visuals—I’m the expert you need.
             </mark><br>
             <br><mark class="p2">I was ranked <mark class="bold">top 2 out of 120</mark> students in RevoU’s data analyst course—<mark class="bold">twice</mark>—by delivering clean, well-structured decks and impactful visualizations that made complex data easy to understand.
             </mark><br>
-            <br><mark class="p3">What sets me apart is my ability to blend <mark class="bold">data expertise</mark>, <mark class="bold">business understanding</mark>, <mark class="bold">design</mark>, and <mark class="bold">communication</mark>. <mark class="italic">I don't just analyze numbers, I craft stories that make data accessible and meaningful</mark>. If you need a data analyst who can bridge the gap between raw information and effective decision-making, I’m the person you're looking for.
+            <br><mark class="p3">With a sharp eye for design and a strong grasp of business context, I turn raw data into clear, compelling visuals. It’s not just about what the data says, but how it’s seen, understood, and acted on.
             </mark></p>
             </div>
         </section>
@@ -94,27 +102,242 @@
                 </div>        
             </div>
         </section>
+
         <section class="portfolio" id="portfolio">
             <h1>Portfolio</h1>
             <hr>
-            
-        <a href="https://drive.google.com/file/d/1T4cBOf4LQJ07qB-rsMBjVpSX9hGX2FzC/view?usp=drive_link" target="_blank" class="portfolio-link">
-            <div id="porto1" class="portfolio-item">
-                <h3>Customer Churn Analysis of Sigma.Net</h3>
-                <img src="assets/dashboard - sigmanet.png">
-                <span class="hover-text">Click to Deck</span>
-            </div>
-        </a>
+            <div class="portfolio-container">
+                <div id="porto1" class="portfolio-item" data-modal="modal-porto1">
+                    <h3>Customer Churn Analysis of Sigma.Net</h3>
+                    <img src="assets/porto1/cover.png">
+                    <span class="hover-text">Click to View!</span>
+                </div>
 
-        <a href="https://drive.google.com/file/d/12d0w-hHh0GZSMTpsfa-yH2ONpebgGHz9/view?usp=drive_link" target="_blank" class="portfolio-link">
-            <div id="porto2" class="portfolio-item">
-                <h3>WishfulBazaar Sales Performance Analysis</h3>
-                <img src="assets/dashboard - wishfullbazaar.png">
-                <span class="hover-text">Click to Deck</span>
-            </div>
-        </a>
+                <div id="porto2" class="portfolio-item" data-modal="modal-porto2">
+                    <h3>To Be Determined</h3>
+                    <img src="assets/tbd.png">
+                    <span class="hover-text">Click to View!</span>
+                </div>
 
+                <div id="porto3" class="portfolio-item" data-modal="modal-porto3">
+                    <h3>To Be Determined</h3>
+                    <img src="assets/tbd.png">
+                    <span class="hover-text">Click to View!</span>
+                </div>
+
+                <div id="porto4" class="portfolio-item" data-modal="modal-porto4">
+                    <h3>To Be Determined</h3>
+                    <img src="assets/tbd.png">
+                    <span class="hover-text">Click to View!</span>
+                </div>
+
+                <div id="porto5" class="portfolio-item" data-modal="modal-porto5">
+                    <h3>To Be Determined</h3>
+                    <img src="assets/tbd.png">
+                    <span class="hover-text">Click to View!</span>
+                </div>
+            </div>
         </section>
+        
+ <!------------------------------------------ Modal for Porto 1 ------------------------------------------>
+        <div class="modal-overlay" id="modal-porto1">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h2>Customer Churn Analysis of Sigma.Net</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+
+                <div class="modal-content">
+                    <img src="assets/porto1/summary.png" alt="Sigma.Net Dashboard" class="modal-image">
+                    <div class="description-box">
+                        <div class="desc-row">
+                            <div class="desc-col" id="desc-col1"><p>skills</p></div>
+                            <div class="desc-col" id="desc-col2"> 
+                                <span class="span-tag">Python</span>
+                                <span class="span-tag">Pandas</span>
+                                <span class="span-tag">Matplotlib</span>
+                                <span class="span-tag">Scikit-learn</span>
+                                <span class="span-tag">PowerBI</span>
+                            </div>
+                        </div>
+                        <div class="desc-row">
+                            <div class="desc-col" id="desc-col1"><p>link</p></div>
+                            <div class="desc-col" id="desc-col2">
+                                <a href="https://drive.google.com/file/d/1T4cBOf4LQJ07qB-rsMBjVpSX9hGX2FzC/view?usp=drive_link">
+                                    <p>• Deck Presentation</p>
+                                </a><a href="https://colab.research.google.com/drive/1K4lE4CEWewSXjCYYs45hmi2vtLg_g6DV#scrollTo=u_xKkO8AHPnn">
+                                    <p>• Colab Documentation</p>
+                                </a><a href="https://www.kaggle.com/datasets/mehmetsabrikunt/internet-service-churn">
+                                    <p>• Kaggle Dataset</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="desc-row">
+                            <div class="desc-col" id="desc-col1"><p>year</p></div>
+                            <div class="desc-col" id="desc-col2"><p>2025</p></div>
+                        </div>
+                    </div>
+                    <div class="desc-body">
+                        <h4>Project Overview</h4>
+                        <div class="overview-container">
+                            <p>Sigma.Net is an internet provider, currently facing a serious business challenge: a customer <mark class="bad">churn rate of 57.86%</mark>, 
+                                which exceeds the industry norm of <b>20–40%</b> and directly impacts retention and profitability. 
+                                Despite offering a structured service process—from marketing and onboarding to activation, support, 
+                                and billing—gaps in early customer experience, pricing, and service reliability lead to early disengagement. 
+                                The project's core objective is <mark class="neutral">to reduce churn to 45%</mark> within three months by uncovering root causes through data-driven analysis and delivering actionable improvements.</p>
+                        </div>
+                        <h4>Methodology</h4>
+                        <div class="methodology-container">
+                            <ol>
+                                <li><strong>Business Understanding</strong><br>
+                                Gained a clear understanding of the business challenge through data exploration and industry research, then defined the project objectives.</li>
+
+                                <li><strong>Data Preparation & Cleaning</strong><br>
+                                Prepared and cleaned the dataset using Python to ensure accuracy and consistency.</li>
+
+                                <li><strong>Exploratory Data Analysis (EDA)</strong><br>
+                                Analyzed customer behavior and demographic patterns to uncover churn patterns, using Python and Power BI.</li>
+
+                                <li><strong>Predictive Analysis</strong><br>
+                                Applied a decision tree algorithm to evaluate variable significance and build a churn prediction model.</li>
+
+                                <li><strong>Data Visualization</strong><br>
+                                Created relevant charts with Python and Power BI, then developed a comprehensive dashboard in Power BI.</li>
+
+                                <li><strong>Insight & Recommendation</strong><br>
+                                Generated actionable insights and formulated recommendations based on analysis results to reduce churn and improve customer retention.</li>
+                            </ol>
+                        </div>
+                        <h4>Insight</h4>
+                        <div class="insight-container">
+                            <img src="assets/porto1/churn_age_histogram.png" alt="Chart showing early churn trend">
+                            <div>
+                                <p><strong>Churn is Driven by Poor Early Experience</strong><br>
+                                The primary reason for Sigma.Net’s high churn rate of 57.86% is customers leaving early, typically within just a few months, due to disappointing first impressions. This is often tied to uncompetitive pricing, unreliable internet service, and overly restrictive download limits.</p>
+                            </div>
+                                                
+                            <img src="assets/porto1/71-percent.png" alt="Bar chart that proofing 71% customers is a new customer">
+                            <div>
+                                <p><strong>New Customers Are the Most Vulnerable</strong><br>
+                                Around 71% of churning customers are relatively new, suggesting that Sigma.Net's onboarding process fails to meet expectations or deliver immediate value.</p>
+                            </div>
+
+                            <img src="assets/porto1/churn_bill_bar.png" alt="Chart of churn by bill amount">
+                            <div>
+                                <p><strong>Cost Sensitivity is High</strong><br>
+                                Customers facing monthly bills higher than $18 are more likely to churn, especially when the perceived value doesn't justify the cost. The sweet spot for retention lies between $6 and $18 per month.</p>
+                            </div>
+                        
+                            <img src="assets/porto1/churn_fail_bar.png" alt="Service reliability vs churn graph">
+                            <div>
+                                <p><strong>Service Quality Impacts Loyalty</strong><br>
+                                While not the leading cause, frequent service failures such as disconnections or technical issues contribute meaningfully to churn, especially among customers who've already experienced other friction points.</p>
+                            </div>
+                        
+                            <img src="assets/porto1/download_over_limit_bar.png" alt="Chart of churn correlation with data cap breaches">
+                            <div>
+                                <p><strong>Download Limits Cause Frustration</strong><br>
+                                Customers who repeatedly breach download limits are at a significantly higher risk of churning. This points to a need for more flexible or generous data plans.</p>
+                            </div>
+                        
+                            <img src="assets/porto1/churn_package_pie.png" alt="Comparison of churn by subscription type">
+                            <div>
+                                <p><strong>Internet-Only Plans May Underperform</strong><br>
+                                Customers who subscribe only to internet packages are disproportionately represented among churned users, highlighting possible dissatisfaction with stand-alone service quality or pricing.</p>
+                            </div>
+                        </div>
+                        <h4>Recommendation</h4>
+                        <div class="recommendation-container"><ol>
+                            <li>
+                                <strong>Improve First Impressions for New Customers</strong>
+                                <ul>
+                                <li>Offer more competitive and flexible pricing plans to enhance perceived value.</li>
+                                <li>Focus onboarding efforts on delivering a positive early experience.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Revise Pricing Strategy</strong>
+                                <ul>
+                                <li>Introduce tiered plans that match various customer needs.</li>
+                                <li>Ensure pricing aligns with customer expectations and industry standards.</li>
+                                <li><em>Expected impact: ~8% retention improvement.</em></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Increase Download Limits</strong>
+                                <ul>
+                                <li>Raise the overall download limit threshold to reduce customer frustration.</li>
+                                <li>Offer flexible add-on packages for high-usage customers instead of strict penalties.</li>
+                                <li><em>Expected impact: ~3% retention improvement.</em></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Enhance Service Quality and Infrastructure</strong>
+                                <ul>
+                                <li>Improve customer support responsiveness to reduce churn-related friction.</li>
+                                <li>Invest in network upgrades to minimize service disruptions and outages.</li>
+                                <li><em>Expected impact: ~5% retention improvement.</em></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Use Predictive AI for Proactive Intervention</strong>
+                                <ul>
+                                <li>Deploy a Random Forest churn prediction model to predict customer churn.</li>
+                                <li>Integrate model results into a dashboard that highlights high-risk users.</li>
+                                <li>Enable proactive retention actions tailored to predicted churn behavior.</li>
+                                </ul>
+                            </li>
+                            </ol>
+                        </div>
+                        <h4>Features</h4>
+                        <div class="feature-container">
+                            <img src="assets/porto1/dashboard - sigmanet.png" alt="Dashboard for Sales">
+                            <div>
+                                <p><strong>Churn Monitoring Dashboard for Sales</strong><br>
+                                Designed and developed a dashboard to help the sales team track and understand customer churn trends. This tool enables proactive engagement by highlighting churn risks and visualizing key patterns, allowing both sales and marketing teams to respond more effectively.</p>
+                            </div>
+
+                            <img src="assets/porto1/sigmanet-ML.png" alt="Featured Machine Learning">
+                            <div>
+                                <p><strong>AI-supported Dashboard</strong><br>
+                                Developed a dashboard enhanced with predictive AI models to provide early warnings of potential customer churn. This feature empowers sales and marketing teams to take timely, data-driven actions to retain high-risk customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!------------------------------------------ Modal for Porto 2 ------------------------------------------>
+        <div class="modal-overlay" id="modal-porto2">
+            <div class="modal-box">
+                <div class="modal-header">
+                    <h2>WishfulBazaar Sales Performance Analysis</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-content">
+                    <img src="assets/dashboard - wishfullbazaar.png" alt="WishfulBazaar Dashboard" class="modal-image">
+                    
+                    <h4>Project Overview</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem qui illo nemo odio esse. Cum magnam natus velit maxime ab illo praesentium accusamus obcaecati harum odio, inventore sint quos repudiandae?</p>
+                    
+                    <h4>Key Features</h4>
+                    <p>• Sales trend analysis across multiple time periods<br>
+                    • Product performance tracking and inventory optimization<br>
+                    • Customer lifetime value analysis<br>
+                    • Geographic sales distribution mapping</p>
+                    
+                    <h4>Technologies Used</h4>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Tableau</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <section class="contact" id="contact">
             <h1>Contact</h1>
             <hr>
@@ -136,11 +359,35 @@
         </section>
         </main>
     </div>
-    <script src="particles.js"></script>
+        <script src="particles.js"></script>
     <script>
         particlesJS.load('particles-js', 'assets/particles.json', function() {
         console.log('callback - particles.js config loaded');
         });
     </script>
+    <script src="modal.js"></script>
 </body>
 </html>
+
+<!-- New Porto Template -->
+<!-- 
+item:
+<div id="porto3" class="portfolio-item" data-modal="modal-porto3">
+    <h3>Your Project Title</h3>
+    <img src="assets/your-image.png">
+    <span class="hover-text">Click to View!</span>
+</div>
+
+modal:
+<div class="modal-overlay" id="modal-porto3">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2>Your Project Title</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-content">
+        --------------content here---------------
+        </div>
+    </div>
+</div>
+-->

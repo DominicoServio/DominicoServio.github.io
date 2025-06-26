@@ -16,11 +16,11 @@
 nav{
     background-color: black;
 
-    width: 100%;
+    width: 100vw;
     height: 7vh;
 
     position: fixed;
-    top: 0px;
+    top: 0;
 
     display: flex;
     align-items: center;
@@ -34,26 +34,63 @@ nav img{
 }
 .navbar ul{
     list-style-type: none;
-    /* float: right; */
+    float: right;
+    display: flex;
+    padding-right: 1rem;
+}
+.navbar ul li{
+    margin: 0;
 }
 .navbar ul a{
     color: white;
     text-decoration: none;
     padding: 15px;
-    display: block;
+    display: flex;
     text-align: center;
 
     font-family: Montserrat, Roboto, Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.75em;
+    font-size: 0.75rem;
     
     transition: background-color 0.2s ease;
 }
 .navbar ul a:hover{
     background-color: rgba(255, 255, 255, 0.3);
 }
-.navbar li{
-    float: left;
+
+.profile-dropdown {
+    display: none !important;
+    position: absolute;
+    background-color: black;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    z-index: 100;
 }
+
+.navbar li {
+    position: relative;
+}
+
+.navbar li:hover .profile-dropdown {
+    display: block !important;
+}
+
+.profile-dropdown li a {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    font-size: 0.75rem;
+}
+
+.profile-dropdown li a:hover {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 /* ======== Header ======== */
 #particles-js{
     position: absolute;
@@ -79,6 +116,7 @@ header{
 header img{
     height: 150px;
     z-index: 1;
+    pointer-events: none;
 }
 header h2{
     margin-top: 10px;
@@ -86,17 +124,20 @@ header h2{
     font-weight:600;
     padding-top: 2rem;
     z-index: 1;
+    pointer-events: none;
 }
 header hr{
     width: 200px;
     margin-top: 20px;
     margin-bottom: 20px;
     z-index: 1;
+    pointer-events: none;
 }
 header p{
     width: min(32rem, 80%);
     line-height: 1.5em;
     z-index: 1;
+    pointer-events: none;
 }
 .button-container{
     width: 100%;
@@ -107,10 +148,13 @@ header p{
     justify-content: center;
 
     z-index: 1;
+    pointer-events: none;
 }
 .button-container a{
     text-decoration: none;
     z-index: 1;
+
+    pointer-events: none;
 }
 #div-button{
     margin: 1em;
@@ -133,12 +177,16 @@ header p{
     
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     z-index: 1;
+
+    pointer-events: auto;
 }
 #div-button:hover {
     background-color: dodgerblue;
     border-color: white;
     color: white;
     cursor: pointer;
+
+    pointer-events: auto;
 }
 
 /* ======== Main Body ======== */
@@ -157,8 +205,8 @@ main{
     padding-top: 5em;
     padding-bottom: 6em;
 
-    color: white;
-    background-color: black;
+    /* color: black; */
+    background-color: rgb(245, 245, 245);
 
     display: flex;
     flex-direction: column;
@@ -172,14 +220,29 @@ main{
 .about hr{
     width: 16em;
     margin-top: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
-.about img{
-    height: 400px;
-    margin: 20px;
+.about h3{
+    width: 600px;
+
+    color: dodgerblue;
+    font-size: 2rem;
+    /* font-weight: bold; */
+    font-style: italic;
+}
+.photo-container{
+    height: 300px;
+    width: 200px;
+    overflow: hidden;
+    /* margin: 20px; */
+}
+.photo-container img{
+    width: 120%;
+    margin-left: 50%;
+    transform: translateX(-50%) translateY(-5%);
 }
 .about p{
-    width: 450px;
+    width: 500px;
     margin: 20px;
 
     line-height: 1.5rem;
@@ -187,20 +250,15 @@ main{
 }
 .about mark{
     background-color:rgba(0, 0, 0, 0);
-    color: lightgray;
+    color: rgb(55, 55, 55);
 }
 .about .bold{
     font-weight: bold;
-    color: white;
+    color: black;
 }
 .about .p3 .bold{
-    color: lightgray;
+    color: rgb(55, 55, 55);
     font-weight: normal;
-}
-.about .italic{
-    color: rgb(37, 193, 245);
-    font-weight: bold;
-    font-style: italic;
 }
 
 /* -------- Skills -------- */
@@ -290,6 +348,12 @@ main{
     flex-direction: column;
     align-items: center;
 }
+.portfolio-container{
+    /* width: 65%; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+}
 .portfolio hr{
     width: 16em;
     height: 1px;
@@ -354,6 +418,200 @@ main{
     opacity: 1;
 }
 
+/* TBD */
+
+#porto2, #porto3, #porto4, #porto5{
+    pointer-events: none;
+}
+
+/* Modal */
+body.modal-open {
+  overflow: hidden;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-box {
+  max-height: 80vh;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.modal-overlay.active {
+  display: flex;
+}
+/* Additional Modal Styles */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+.modal-header h2{
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.close-btn:hover{
+    background: #f0f0f0;
+    color: #333;
+}
+.modal-content{
+    line-height: 1.6;
+}
+.modal-image{
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* description box */
+.description-box{
+    display: flex;
+    flex-direction: column;
+}
+.desc-row{
+    display:flex;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.desc-col{
+    text-align: left;
+}
+#desc-col1{
+    width: 4rem;
+}
+#desc-col2 a{
+    text-decoration: none;
+}
+#desc-col2 a p{
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.modal-content h4{
+    color: #333;
+    margin: 20px 0 10px 0;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
+}
+.modal-content p{
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.modal-content .desc-body p{
+    text-align: justify;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.modal-content p mark{
+    background: none;
+    font-weight: bold;
+}
+.modal-content p .bad{
+    color: rgba(247,37,133,255);
+}
+.modal-content p .neutral{
+    color: dodgerblue;
+}
+.modal-content ol,ul li{
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-left: 5%;
+    margin-right: 2%;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+.modal-content .insight-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 40% 57.5%;
+    column-gap: 2.5%;
+    row-gap: 1rem;
+    /* border: solid */
+}
+.insight-container img{
+    padding-top: 0.5rem;
+    width: 100%;
+    /* background: #555; */
+}
+.modal-con
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+.recommendation-container{
+    /* background: #555; */
+    width: 100%;
+}
+
+.recommendation-container ol{
+    margin-left: 5%;
+}
+.recommendation-container ul li {
+    margin-left: 3%;
+    margin-bottom: 0.5rem; /* spacing between bullets */
+    line-height: 1.5rem;      /* spacing within a single bullet point */
+}
+
+.recommendation-container ul{
+    margin-bottom: 0.5rem;
+}
+.modal-content .feature-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 40% 57.5%;
+    column-gap: 2.5%;
+    row-gap: 1rem;
+    /* border: solid */
+}
+.feature-container img{
+    padding-top: 0.5rem;
+    width: 100%;
+    /* background: #555; */
+}
+.span-tag {
+    background: #f0f0f0;
+    color: #333;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
 /* -------- Contact -------- */
 .contact{
     height: 100%;
@@ -389,6 +647,7 @@ main{
 }
 .contact-container a{
     text-decoration: none;
+    pointer-events: none;
 }
 .contact-button{
     margin: 1em;
@@ -410,6 +669,8 @@ main{
     justify-content: center;
 
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+    pointer-events: auto;
 }
 .contact-button:hover {
     background-color: dodgerblue;
@@ -421,6 +682,75 @@ main{
 .icon-mobile {
   display: none;
 }
+
+/*===================================================== Profile Page =====================================================*/
+.profile-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 15rem 50rem;
+    column-gap: 2rem;
+    /* row-gap: 1rem; */
+
+    padding-top: 5%;
+}
+.profile-container h2{
+    font-size: 2rem;
+}
+.profile-sidebar{
+    height: 100%;
+    width: auto;
+    
+    padding-top: 2rem;
+    margin-left: 2rem;
+    /* background: #999; */
+}
+.profile-sidebar img{
+    width: 15rem;
+    /* position: fixed; */
+}
+.profile-body{
+    height: 100%;
+    width: auto;
+
+    padding-top: 2rem;
+    /* background: #999; */
+}
+.profile-body section{
+    margin-bottom: 1rem;
+    margin-left:2rem;
+    margin-right: 2rem;
+}
+.circle{
+    float: left;
+
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 0.8rem;
+    margin-right: 0.75rem;
+    transform: translateY(50%);
+
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.25);
+}
+#education p, #work-experience p, #work-experience ul, #organization-experience p, #organization-experience ul{
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 0.1rem solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    color: #333;
+}
+.profile-body ul{
+    padding-top: 0.5rem;
+}
+.profile-body ul li{
+    line-height: 1.2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    color: #333;
+}
+/*======================================================================================================================
+================================================== Responsive Control ==================================================
+======================================================================================================================*/
 
 @media screen and (max-width: 768px) {
     * h1, h2{
