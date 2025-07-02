@@ -1,0 +1,141 @@
+{
+    "title": "Customer Churn Analysis of Sigma.Net",
+    "summaryImage": "assets/porto1/summary.png",
+    "skills": ["Python", "Pandas", "Matplotlib", "Scikit-learn", "PowerBI"],
+    "links": [
+        {
+            "title": "Deck Presentation",
+            "url": "https://drive.google.com/file/d/1T4cBOf4LQJ07qB-rsMBjVpSX9hGX2FzC/view?usp=drive_link"
+        },
+        {
+            "title": "Colab Documentation",
+            "url": "https://colab.research.google.com/drive/1K4lE4CEWewSXjCYYs45hmi2vtLg_g6DV#scrollTo=u_xKkO8AHPnn"
+        },
+        {
+            "title": "Kaggle Dataset",
+            "url": "https://www.kaggle.com/datasets/mehmetsabrikunt/internet-service-churn"
+        }
+    ],
+    "year": "2025",
+    "overview": "Sigma.Net is an internet provider, currently facing a serious business challenge: a customer <mark class=\"bad\">churn rate of 57.86%</mark>, which exceeds the industry norm of <b>20–40%</b> and directly impacts retention and profitability. Despite offering a structured service process—from marketing and onboarding to activation, support, and billing—gaps in early customer experience, pricing, and service reliability lead to early disengagement. The project's core objective is <mark class=\"neutral\">to reduce churn to 45%</mark> within three months by uncovering root causes through data-driven analysis and delivering actionable improvements.",
+    "methodology": [
+        {
+            "title": "Business Understanding",
+            "description": "Gained a clear understanding of the business challenge through data exploration and industry research, then defined the project objectives."
+        },
+        {
+            "title": "Data Preparation & Cleaning",
+            "description": "Prepared and cleaned the dataset using Python to ensure accuracy and consistency."
+        },
+        {
+            "title": "Exploratory Data Analysis (EDA)",
+            "description": "Analyzed customer behavior and demographic patterns to uncover churn patterns, using Python and Power BI."
+        },
+        {
+            "title": "Predictive Analysis",
+            "description": "Applied a decision tree algorithm to evaluate variable significance and build a churn prediction model."
+        },
+        {
+            "title": "Data Visualization",
+            "description": "Created relevant charts with Python and Power BI, then developed a comprehensive dashboard in Power BI."
+        },
+        {
+            "title": "Insight & Recommendation",
+            "description": "Generated actionable insights and formulated recommendations based on analysis results to reduce churn and improve customer retention."
+        }
+    ],
+    "insights": [
+        {
+            "title": "Churn is Driven by Poor Early Experience",
+            "description": "The primary reason for Sigma.Net's high churn rate of 57.86% is customers leaving early, typically within just a few months, due to disappointing first impressions. This is often tied to uncompetitive pricing, unreliable internet service, and overly restrictive download limits.",
+            "image": "assets/porto1/churn_age_histogram.png",
+            "alt": "Chart showing early churn trend"
+        },
+        {
+            "title": "New Customers Are the Most Vulnerable",
+            "description": "Around 71% of churning customers are relatively new, suggesting that Sigma.Net's onboarding process fails to meet expectations or deliver immediate value.",
+            "image": "assets/porto1/71-percent.png",
+            "alt": "Bar chart that proofing 71% customers is a new customer"
+        },
+        {
+            "title": "Cost Sensitivity is High",
+            "description": "Customers facing monthly bills higher than $18 are more likely to churn, especially when the perceived value doesn't justify the cost. The sweet spot for retention lies between $6 and $18 per month.",
+            "image": "assets/porto1/churn_bill_bar.png",
+            "alt": "Chart of churn by bill amount"
+        },
+        {
+            "title": "Service Quality Impacts Loyalty",
+            "description": "While not the leading cause, frequent service failures such as disconnections or technical issues contribute meaningfully to churn, especially among customers who've already experienced other friction points.",
+            "image": "assets/porto1/churn_fail_bar.png",
+            "alt": "Service reliability vs churn graph"
+        },
+        {
+            "title": "Download Limits Cause Frustration",
+            "description": "Customers who repeatedly breach download limits are at a significantly higher risk of churning. This points to a need for more flexible or generous data plans.",
+            "image": "assets/porto1/download_over_limit_bar.png",
+            "alt": "Chart of churn correlation with data cap breaches"
+        },
+        {
+            "title": "Internet-Only Plans May Underperform",
+            "description": "Customers who subscribe only to internet packages are disproportionately represented among churned users, highlighting possible dissatisfaction with stand-alone service quality or pricing.",
+            "image": "assets/porto1/churn_package_pie.png",
+            "alt": "Comparison of churn by subscription type"
+        }
+    ],
+    "recommendations": [
+        {
+            "title": "Improve First Impressions for New Customers",
+            "points": [
+                "Offer more competitive and flexible pricing plans to enhance perceived value.",
+                "Focus onboarding efforts on delivering a positive early experience."
+            ]
+        },
+        {
+            "title": "Revise Pricing Strategy",
+            "points": [
+                "Introduce tiered plans that match various customer needs.",
+                "Ensure pricing aligns with customer expectations and industry standards.",
+                "<em>Expected impact: ~8% retention improvement.</em>"
+            ]
+        },
+        {
+            "title": "Increase Download Limits",
+            "points": [
+                "Raise the overall download limit threshold to reduce customer frustration.",
+                "Offer flexible add-on packages for high-usage customers instead of strict penalties.",
+                "<em>Expected impact: ~3% retention improvement.</em>"
+            ]
+        },
+        {
+            "title": "Enhance Service Quality and Infrastructure",
+            "points": [
+                "Improve customer support responsiveness to reduce churn-related friction.",
+                "Invest in network upgrades to minimize service disruptions and outages.",
+                "<em>Expected impact: ~5% retention improvement.</em>"
+            ]
+        },
+        {
+            "title": "Use Predictive AI for Proactive Intervention",
+            "points": [
+                "Deploy a Random Forest churn prediction model to predict customer churn.",
+                "Integrate model results into a dashboard that highlights high-risk users.",
+                "Enable proactive retention actions tailored to predicted churn behavior."
+            ]
+        }
+    ],
+    "features": [
+        {
+            "title": "Churn Monitoring Dashboard for Sales",
+            "description": "Designed and developed a dashboard to help the sales team track and understand customer churn trends. This tool enables proactive engagement by highlighting churn risks and visualizing key patterns, allowing both sales and marketing teams to respond more effectively.",
+            "image": "assets/porto1/dashboard - sigmanet.png",
+            "alt": "Dashboard for Sales"
+        },
+        {
+            "title": "AI-supported Dashboard",
+            "description": "Developed a dashboard enhanced with predictive AI models to provide early warnings of potential customer churn. This feature empowers sales and marketing teams to take timely, data-driven actions to retain high-risk customers.",
+            "image": "assets/porto1/sigmanet-ML.png",
+            "alt": "Featured Machine Learning"
+        }
+    ],
+    "notes": "I took this project to challenge myself, working with limited data to uncover meaningful insights into Sigma.Net’s customer churn."
+}

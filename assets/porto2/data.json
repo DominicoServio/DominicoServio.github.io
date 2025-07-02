@@ -1,0 +1,134 @@
+{
+    "title": "Sales Performance Analysis of WishfulBazaar",
+    "summaryImage": "assets/porto2/summary.png",
+    "skills": ["Tableau", "PowerBI", "Dashboard"],
+    "links": [
+        {
+            "title": "Deck Presentation",
+            "url": "https://drive.google.com/file/d/1a3uFO2kB1ZejEMIkXodHJ1q4GuPfW8my/view?usp=drive_link"
+        },
+        {
+            "title": "Public Dashboard",
+            "url": "https://public.tableau.com/app/profile/dominico.servio/viz/TableauIntermediateAssigment/Dashboard"
+        }
+    ],
+    "year": "2025",
+    "overview": "WishfulBazaar is a leading e-commerce company aiming to strengthen its data-driven decision-making by developing a company-wide sales dashboard. Despite having access to rich customer and transaction data, the company lacks a centralized view of performance across regions, products, and customer segments. At the request of CEO Mr. Ronaldinho and under the direction of Head of Data Mr. Neymar, this project focuses on building an interactive Tableau dashboard to uncover key insights—such as declining profit trends, high abandoned sales, and shifting customer behaviors. The goal is to empower executives with actionable metrics and visualizations that improve profitability, customer targeting, and operational efficiency.",
+    "methodology": [
+        {
+            "title": "Business Understanding",
+            "description": "Identified key business questions through initial data exploration and stakeholder goals, focusing on sales trends, customer behavior, and campaign effectiveness."
+        },
+        {
+            "title": "Data Preparation & Cleaning",
+            "description": "Imported and cleaned datasets in Tableau, ensuring correct data types and consistent formatting to support accurate analysis."
+        },
+        {
+            "title": "Exploratory Data Analysis (EDA)",
+            "description": "Explored sales patterns, customer demographics, and product performance to uncover trends and anomalies across time, region, and category."
+        },
+        {
+            "title": "Metric Calculation",
+            "description": "Created calculated fields for key metrics such as Potential Sales, Abandoned Sales, Return Sales, and Success Sales, along with YoY growth and cumulative profit."
+        },
+        {
+            "title": "Data Visualization",
+            "description": "Built interactive charts and maps in Tableau, including dual-axis line charts, ranked bar charts, pie charts, and scatter plots with clustering."
+        },
+        {
+            "title": "Insight & Recommendation",
+            "description": "Generated actionable insights and formulated strategic recommendations based on analysis results to improve sales performance and customer engagement."
+        },
+        {
+            "title": "Dashboard Design",
+            "description": "Designed an executive-friendly dashboard with real-time filters and clear visual hierarchy to support strategic decision-making."
+        }
+    ],
+    "insights": [
+        {
+            "title": "Profitability Is Slipping Year Over Year",
+            "description": "WishfulBazaar’s profitability is on a downward trajectory. In 2022, profit dropped by 14.59% compared to the baseline year, and by 2023, the decline deepened to 33.75%. Despite strong sales, rising costs or inefficiencies may be eroding margins—signaling a need for operational recalibration.",
+            "image": "assets/porto2/declined_profit_bar.png",
+            "alt": "Chart showing early churn trend"
+        },
+        {
+            "title": "Nearly $400K Lost to Abandoned and Returned Sales",
+            "description": "Sales potential is high, but not fully realized. While successful transactions dominate, abandoned carts and returned items account for a significant $400K in lost revenue. These missed opportunities suggest friction in the purchase journey or post-purchase dissatisfaction—both of which are solvable.",
+            "image": "assets/porto2/total_sales_pie.png",
+            "alt": "Bar chart that proofing 71% customers is a new customer"
+        },
+        {
+            "title": "Electronics Dominate Revenue Streams",
+            "description": "Electronics are the powerhouse of WishfulBazaar’s catalog. Televisions and laptops lead the charge, while top-performing home appliances—also electronics—reinforce the category’s dominance. This trend highlights a clear customer preference and a strategic area for continued investment.",
+            "image": "assets/porto2/product_sales_bar.png",
+            "alt": "Chart of churn by bill amount"
+        },
+        {
+            "title": "Customer’s Prefer Card Transaction",
+            "description": "A striking 65.4% of customers prefer using bank cards, with both credit and debit cards ranking highest. Covering EDC or transfer fees could further boost satisfaction and conversion rates. This small operational tweak could yield outsized gains in loyalty and repeat purchases.",
+            "image": "assets/porto2/card_transaction_pie.png",
+            "alt": "Service reliability vs churn graph"
+        },
+        {
+            "title": "Shopping Behavior Varies by Country",
+            "description": "Customers from China, India, and Canada complete purchases more quickly, while those from Australia, Japan, the UK, and the US take longer. This suggests that certain regions may benefit from more intuitive navigation, clearer product information, or localized UX enhancements.",
+            "image": "assets/porto2/shopping_behaviour_bar.png",
+            "alt": "Chart of churn correlation with data cap breaches"
+        },
+        {
+            "title": "Regional Revenue Leaders and Laggards",
+            "description": "Canada, Australia, Italy, China, and the USA each generate over $130K in revenue, making them top-performing markets. In contrast, Spain, India, Japan, and the UK underperform—warranting deeper analysis into cultural preferences, marketing effectiveness, or logistical barriers.",
+            "image": "assets/porto2/sales_by_country_map.png",
+            "alt": "Comparison of churn by subscription type"
+        }
+    ],
+    "recommendations": [
+        {
+            "title": "Boost Profitability",
+            "points": [
+                "Investigate declining profit trends and identify operational inefficiencies.",
+                "Reduce abandoned and returned sales to recover nearly $400K in lost revenue."
+            ]
+        },
+        {
+            "title": "Enhance Customer Experience",
+            "points": [
+                "Tailor store layouts by region: For fast shoppers place essential products up front; For slower shoppers provide spacious aisles and clear signage.",
+                "Support older customers with staff assistance while maintaining a seamless experience for younger shoppers."
+            ]
+        },
+        {
+            "title": "Optimize Product Strategy",
+            "points": [
+                "Extend service periods for electronics to improve satisfaction and build loyalty."
+            ]
+        },
+        {
+            "title": "Refine Market Penetration",
+            "points": [
+                "Evaluate underperforming countries (Spain, India, Japan, UK) to understand barriers and improve demand."
+            ]
+        },
+        {
+            "title": "Improve Payment Convenience",
+            "points": [
+                "Enhance banking options (e.g., cover EDC or transfer fees) to support the 65.4% of customers who prefer card payments."
+            ]
+        }
+    ],
+    "features": [
+        {
+            "title": "Executive Dashboard",
+            "description": "An interactive, high-level dashboard tailored for leadership to monitor profit trends, regional revenue, and customer behavior. Designed with clarity and strategic focus, it helps executives track performance and make informed decisions quickly across the business.",
+            "image": "assets/porto2/executive_dashboard.png",
+            "alt": "Dashboard for Sales"
+        },
+        {
+            "title": "Sales Performance Dashboard for Sales & Marketing Team",
+            "description": "A detailed dashboard for sales and marketing teams to analyze product performance, abandoned and returned sales, and payment preferences. It supports campaign optimization and conversion improvement through clear visualizations and real-time filtering.",
+            "image": "assets/porto2/marketing_dashboard.png",
+            "alt": "Featured Machine Learning"
+        }
+    ],
+    "notes": "-"
+}

@@ -37,7 +37,7 @@
             </p>
             <div class="button-container">
                 <a href=#about><div id="div-button">About Me</div></a>
-                <a href="./profile"><div id="div-button">Experience</div></a>
+                <a href="profile.html"><div id="div-button">Experience</div></a>
             </div>
         </header>
         <main>
@@ -107,40 +107,40 @@
             <h1>Portfolio</h1>
             <hr>
             <div class="portfolio-container">
-                <div id="porto1" class="portfolio-item" data-modal="modal-porto1">
+                <div id="porto1" class="portfolio-item" onclick="openModal('porto1')">
                     <h3>Customer Churn Analysis of Sigma.Net</h3>
                     <img src="assets/porto1/cover.png">
                     <span class="hover-text">Click to View!</span>
                 </div>
 
-                <div id="porto2" class="portfolio-item" data-modal="modal-porto2">
+                <div id="porto2" class="portfolio-item" onclick="openModal('porto2')">
+                    <h3>Sales Performance Analysis of WishfulBazaar</h3>
+                    <img src="assets/porto2/cover.png">
+                    <span class="hover-text">Click to View!</span>
+                </div>
+
+                <div id="porto3" class="portfolio-item" onclick="openModal('porto3')" style="pointer-events: none;">
                     <h3>To Be Determined</h3>
                     <img src="assets/tbd.png">
                     <span class="hover-text">Click to View!</span>
                 </div>
 
-                <div id="porto3" class="portfolio-item" data-modal="modal-porto3">
+                <div id="porto4" class="portfolio-item" onclick="openModal('porto4')" style="pointer-events: none;">
                     <h3>To Be Determined</h3>
                     <img src="assets/tbd.png">
                     <span class="hover-text">Click to View!</span>
                 </div>
 
-                <div id="porto4" class="portfolio-item" data-modal="modal-porto4">
+                <div id="porto5" class="portfolio-item" onclick="openModal('porto5')" style="pointer-events: none;">
                     <h3>To Be Determined</h3>
                     <img src="assets/tbd.png">
                     <span class="hover-text">Click to View!</span>
                 </div>
-
-                <div id="porto5" class="portfolio-item" data-modal="modal-porto5">
-                    <h3>To Be Determined</h3>
-                    <img src="assets/tbd.png">
-                    <span class="hover-text">Click to View!</span>
-                </div>
-            </div>
+            </div>      
         </section>
         
  <!------------------------------------------ Modal for Porto 1 ------------------------------------------>
-        <div class="modal-overlay" id="modal-porto1">
+        <!-- <div class="modal-overlay" id="modal-porto1">
             <div class="modal-box">
                 <div class="modal-header">
                     <h2>Customer Churn Analysis of Sigma.Net</h2>
@@ -306,10 +306,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 <!------------------------------------------ Modal for Porto 2 ------------------------------------------>
-        <div class="modal-overlay" id="modal-porto2">
+        <!-- <div class="modal-overlay" id="modal-porto2">
             <div class="modal-box">
                 <div class="modal-header">
                     <h2>WishfulBazaar Sales Performance Analysis</h2>
@@ -335,7 +335,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
         <section class="contact" id="contact">
@@ -356,6 +356,7 @@
                     <div class="contact-button">EMAIL</div>
                 </a>
             </div>
+
         </section>
         </main>
     </div>
