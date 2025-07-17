@@ -1,0 +1,129 @@
+{
+    "title": "Sales Performance and Client Segmentation of RevoBank",
+    "summaryImage": "assets/porto3/summary.png",
+    "skills": ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    "links": [
+        {
+            "title": "Deck Presentation",
+            "url": "https://drive.google.com/file/d/1a3uFO2kB1ZejEMIkXodHJ1q4GuPfW8my/view?usp=drive_link"
+        }
+    ],
+    "year": "2025",
+    "sections": [
+        {
+            "title": "Porject Overview",
+            "type": "text",
+            "content": "RevoBank is a European financial institution that offers premium banking services and credit products tailored to modern consumers. Their strategic goal for this project was to drive higher utilization of credit cards by understanding customer behavior and improving engagement. However, they faced a challenge: identifying inactive clients and uncovering behavioral patterns that were limiting product usage and overall sales potential."
+        },
+        {
+            "title": "Methodology",
+            "type": "ordered-list",
+            "content": [
+                {
+                    "title": "Business Understanding",
+                    "description": "Aligned with stakeholder goals to define key business questions around customer inactivity, sales trends, and promotional effectiveness."
+                },
+                {
+                    "title": "Data Preparation & Cleaning",
+                    "description": "Processed raw datasets using pandas, ensuring consistency in data types, formatting, and completeness to support reliable analysis."
+                },
+                {
+                    "title": "Exploratory Data Analysis (EDA)",
+                    "description": "Analyzed transaction patterns, demographic distribution, and promotional exposure using descriptive stats, grouping, and visualization tools like Matplotlib and seaborn."
+                },
+                {
+                    "title": "Metric Calculation",
+                    "description": "Engineered metrics including Total Sales, Average Profit per Segment, Promotion Effectiveness Rate, and Inactivity Rate to quantify business impact."
+                },
+                {
+                    "title": "Customer Segmentation",
+                    "description": "Segmented clients by generation, gender, and activity level using rule-based logic and their spending power using RFM method."
+                },
+                {
+                    "title": "Data Visualization",
+                    "description": "Build clean and fresh chart using Matplotlib and Seaborn."
+                },
+                {
+                    "title": "Insight & Recommendation",
+                    "description": "Synthesized trends into strategic recommendations, leveraging EDA insights and metric benchmarks to propose campaign optimizations."
+                }
+            ]
+        },
+        {
+            "title": "Insights",
+            "type": "image-text",
+            "content": [
+                {
+                    "title": "Strong Revenue, Missed Potential",
+                    "description": "RevoBank achieved €402.6M in total sales over 3 years, yet 6.07% of clients were completely inactive, pointing to revenue gaps that targeted campaigns could bridge.",
+                    "image": "assets/porto3/customer_distribution_pie.png",
+                    "alt": "Ratio of inactive customer"
+                },
+                {
+                    "title": "Customer Engagement Risk",
+                    "description": "Around 23.3% of clients are at risk of churn due to low transaction frequency and sales contribution. This highlighting urgency for reactivation and nurturing strategies.",
+                    "image": "assets/porto3/customer_segment_pie.png",
+                    "alt": "Customer segmentation"
+                },
+                {
+                    "title": "Generational Behavior",
+                    "description": "Gen X and Millennials prefer fewer but high-value transactions, making them ideal targets for discount-driven campaigns. Gen Z’s market is still unstable, while Boomers are oversaturated.",
+                    "image": "assets/porto3/generation_bar.png",
+                    "alt": "Average sales and transaction each generation"
+                },
+                {
+                    "title": "Promotion Fatigue Threshold",
+                    "description": "Promotional effectiveness declines sharply after 8 rounds; Boomer and Millennial segments show resistance to repeated outreach, necessitating smarter cadence control.",
+                    "image": "assets/porto3/direct_promotion_line.png",
+                    "alt": "Graph of times direct promotion done and their sales success"
+                },
+                {
+                    "title": "Gender Profitability Dynamics",
+                    "description": "Female customers dominate all segments and drive higher total profit, although males show higher average profit per user. This suggest a need for gender-aware strategies.",
+                    "image": "assets/porto3/gender_sales_bar.png",
+                    "alt": "Sales by gender"
+                },
+                {
+                    "title": "Segment Revenue Concentration",
+                    "description": "Despite their small numbers, <b>Premium Clients</b> and <b>Royal but not Loyal</b> contribute over 40% of total revenue, making them high-priority targets for retention and VIP incentives.",
+                    "image": "assets/porto3/rfm_segment_pie.png",
+                    "alt": "Pie chart showing segmentation with RFM"
+                }
+            ]
+        },
+        {
+            "title": "Recommendations",
+            "type": "ordered-list",
+            "content": [
+                {
+                    "title": "Target Inactive Clients",
+                    "description": "Launch reactivation campaigns for the 6.07% of inactive users using personalized promotions and limited-time offers."
+                },
+                {
+                    "title": "Prioritize Gen X & Millennials",
+                    "description": "Focus marketing efforts on segments with high-value, infrequent transactions by offering discounts tailored to their behavior."
+                },
+                {
+                    "title": "Cap Promotion Frequency",
+                    "description": "Limit direct promotional outreach to no more than 7–8 times to prevent engagement drop-off due to promotion fatigue."
+                },
+                {
+                    "title": "Use RFM-Based Strategies",
+                    "description": "Apply tailored actions to key segments, such as onboarding for One-Timers, loyalty rewards for Premium Clients, and revival efforts for Loss Clients."
+                },
+                {
+                    "title": "Maximize Segment Revenue Efficiency",
+                    "description": "Prioritize Premium and Royal-but-not-Loyal customers who generate over 40% of total revenue despite their small population."
+                },
+                {
+                    "title": "Develop Gender-Aware Campaigns",
+                    "description": "Leverage the stronger profit performance among female customers while optimizing for higher average profit per male user."
+                },
+                {
+                    "title": "Offer Membership Incentives",
+                    "description": "Introduce tiered membership or VIP perks to sustain high-value client engagement and reduce churn risk."
+                }
+            ]
+        }
+    ]
+}

@@ -1,7 +1,110 @@
-// Modal template and data loading system
-class ModalManager {
+// Flexible Modal template and data loading system
+class FlexibleModalManager {
     constructor() {
         this.modals = new Map();
+        this.sectionRenderers = new Map();
+        this.initializeSectionRenderers();
+    }
+
+    // Initialize different section renderers
+    initializeSectionRenderers() {
+        // Text-only renderer
+        this.sectionRenderers.set('text', (content) => `
+            <div class="text-content">
+                <p>${content}</p>
+            </div>
+        `);
+
+        // Image + text renderer (original format)
+        this.sectionRenderers.set('image-text', (items) => `
+            ${items.map(item => `
+                <div class="image-text-item">
+                    <img src="${item.image}" alt="${item.alt}">
+                    <div>
+                        <p><strong>${item.title}</strong><br>
+                        ${item.description}</p>
+                    </div>
+                </div>
+            `).join('')}
+        `);
+
+        // List renderer
+        this.sectionRenderers.set('list', (items) => `
+            <ul>
+                ${items.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+        `);
+
+        // Ordered list renderer
+        this.sectionRenderers.set('ordered-list', (items) => `
+            <ol>
+                ${items.map(item => `
+                    <li>
+                        <strong>${item.title}</strong><br>
+                        ${item.description}
+                    </li>
+                `).join('')}
+            </ol>
+        `);
+
+        // Table renderer
+        this.sectionRenderers.set('table', (data) => `
+            <table class="modal-table">
+                <thead>
+                    <tr>
+                        ${data.headers.map(header => `<th>${header}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                    ${data.rows.map(row => `
+                        <tr>
+                            ${row.map(cell => `<td>${cell}</td>`).join('')}
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        `);
+
+        // Nested recommendations renderer
+        this.sectionRenderers.set('recommendations', (items) => `
+            <ol>
+                ${items.map(rec => `
+                    <li>
+                        <strong>${rec.title}</strong>
+                        <ul>
+                            ${rec.points.map(point => `<li>${point}</li>`).join('')}
+                        </ul>
+                    </li>
+                `).join('')}
+            </ol>
+        `);
+
+        // Gallery renderer
+        this.sectionRenderers.set('gallery', (images) => `
+            <div class="image-gallery">
+                ${images.map(img => `
+                    <div class="gallery-item">
+                        <img src="${img.src}" alt="${img.alt}">
+                        ${img.caption ? `<p class="caption">${img.caption}</p>` : ''}
+                    </div>
+                `).join('')}
+            </div>
+        `);
+
+        // Cards renderer
+        this.sectionRenderers.set('cards', (cards) => `
+            <div class="cards-container">
+                ${cards.map(card => `
+                    <div class="card">
+                        ${card.image ? `<img src="${card.image}" alt="${card.alt}">` : ''}
+                        <div class="card-content">
+                            <h5>${card.title}</h5>
+                            <p>${card.description}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `);
     }
 
     // Load modal data from JSON file
@@ -17,8 +120,58 @@ class ModalManager {
         }
     }
 
-    // Generate modal HTML from template
+    // Render a section based on its type
+    renderSection(section) {
+        const renderer = this.sectionRenderers.get(section.type);
+        if (!renderer) {
+            console.warn(`Unknown section type: ${section.type}`);
+            return `<p>Unknown section type: ${section.type}</p>`;
+        }
+        return renderer(section.content);
+    }
+
+    // Generate modal HTML from flexible template
     generateModalHTML(modalId, data) {
+        // Basic info section
+        const basicInfo = `
+            <div class="description-box">
+                ${data.skills ? `
+                    <div class="desc-row">
+                        <div class="desc-col" id="desc-col1"><p>skills</p></div>
+                        <div class="desc-col" id="desc-col2">
+                            ${data.skills.map(skill => `<span class="span-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                ${data.links ? `
+                    <div class="desc-row">
+                        <div class="desc-col" id="desc-col1"><p>link</p></div>
+                        <div class="desc-col" id="desc-col2">
+                            ${data.links.map(link => `
+                                <a href="${link.url}">
+                                    <p>• ${link.title}</p>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+                ${data.year ? `
+                    <div class="desc-row">
+                        <div class="desc-col" id="desc-col1"><p>year</p></div>
+                        <div class="desc-col" id="desc-col2"><p>${data.year}</p></div>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+
+        // Dynamic sections
+        const dynamicSections = data.sections ? data.sections.map(section => `
+            <h4>${section.title}</h4>
+            <div class="${section.title.toLowerCase().replace(/\s+/g, '-')}-container">
+                ${this.renderSection(section)}
+            </div>
+        `).join('') : '';
+
         return `
             <div class="modal-overlay" id="modal-${modalId}">
                 <div class="modal-box">
@@ -27,80 +180,10 @@ class ModalManager {
                         <button class="close-btn">&times;</button>
                     </div>
                     <div class="modal-content">
-                        <img src="${data.summaryImage}" alt="${data.title} Dashboard" class="modal-image">
-                        <div class="description-box">
-                            <div class="desc-row">
-                                <div class="desc-col" id="desc-col1"><p>skills</p></div>
-                                <div class="desc-col" id="desc-col2">
-                                    ${data.skills.map(skill => `<span class="span-tag">${skill}</span>`).join('')}
-                                </div>
-                            </div>
-                            <div class="desc-row">
-                                <div class="desc-col" id="desc-col1"><p>link</p></div>
-                                <div class="desc-col" id="desc-col2">
-                                    ${data.links.map(link => `
-                                        <a href="${link.url}">
-                                            <p>• ${link.title}</p>
-                                        </a>
-                                    `).join('')}
-                                </div>
-                            </div>
-                            <div class="desc-row">
-                                <div class="desc-col" id="desc-col1"><p>year</p></div>
-                                <div class="desc-col" id="desc-col2"><p>${data.year}</p></div>
-                            </div>
-                        </div>
+                        ${data.summaryImage ? `<img src="${data.summaryImage}" alt="${data.title} Dashboard" class="modal-image">` : ''}
+                        ${basicInfo}
                         <div class="desc-body">
-                            <h4>Project Overview</h4>
-                            <div class="overview-container">
-                                <p>${data.overview}</p>
-                            </div>
-                            <h4>Methodology</h4>
-                            <div class="methodology-container">
-                                <ol>
-                                    ${data.methodology.map(item => `
-                                        <li><strong>${item.title}</strong><br>
-                                        ${item.description}</li>
-                                    `).join('')}
-                                </ol>
-                            </div>
-                            <h4>Insight</h4>
-                            <div class="insight-container">
-                                ${data.insights.map(insight => `
-                                    <img src="${insight.image}" alt="${insight.alt}">
-                                    <div>
-                                        <p><strong>${insight.title}</strong><br>
-                                        ${insight.description}</p>
-                                    </div>
-                                `).join('')}
-                            </div>
-                            <h4>Recommendation</h4>
-                            <div class="recommendation-container">
-                                <ol>
-                                    ${data.recommendations.map(rec => `
-                                        <li>
-                                            <strong>${rec.title}</strong>
-                                            <ul>
-                                                ${rec.points.map(point => `<li>${point}</li>`).join('')}
-                                            </ul>
-                                        </li>
-                                    `).join('')}
-                                </ol>
-                            </div>
-                            <h4>Features</h4>
-                            <div class="feature-container">
-                                ${data.features.map(feature => `
-                                    <img src="${feature.image}" alt="${feature.alt}">
-                                    <div>
-                                        <p><strong>${feature.title}</strong><br>
-                                        ${feature.description}</p>
-                                    </div>
-                                `).join('')}
-                            </div>
-                            <h4>Notes</h4>
-                            <div class="notes">
-                                <p>${data.notes}</p>
-                            </div>
+                            ${dynamicSections}
                         </div>
                     </div>
                 </div>
@@ -169,8 +252,8 @@ class ModalManager {
     }
 }
 
-// Initialize modal manager
-const modalManager = new ModalManager();
+// Initialize flexible modal manager
+const flexibleModalManager = new FlexibleModalManager();
 
 // Example usage - call this when your page loads
 document.addEventListener('DOMContentLoaded', async () => {
@@ -184,10 +267,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     ];
     
     // Initialize all modals
-    await modalManager.initializeModals(modalConfigs);
+    await flexibleModalManager.initializeModals(modalConfigs);
 });
 
 // Function to open modal - call this from your buttons
 function openModal(modalId) {
-    modalManager.openModal(modalId);
+    flexibleModalManager.openModal(modalId);
 }
