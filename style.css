@@ -825,6 +825,13 @@ body.modal-open {
     .portfolio-container{
         grid-template-columns: repeat(1, 1fr);
     }
+    .portfolio-item{
+        height: auto;
+        width: 300px;
+    }
+    .portfolio-item h3{
+        font-size: 1.2rem;
+    }
     .icon-mobile {
         display: inline;
         height: 30px;
